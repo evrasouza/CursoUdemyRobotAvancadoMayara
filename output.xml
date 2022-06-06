@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220602 08:52:25.731" rpa="false" schemaversion="3">
-<suite id="s1" name="diffLibrary" source="c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\DiffLibrary\diffLibrary.robot">
-<test id="s1-t1" name="Comparar dois conteúdos" line="8">
-<kw name="Compare &quot;meu_arquivo.txt&quot; e &quot;meu_outro_arquivo.txt&quot;" sourcename="Compare &quot;${ARQUIVO_UM}&quot; e &quot;${ARQUIVO_DOIS}&quot;">
-<kw name="Diff Files" library="DiffLibrary">
-<arg>${datadir}${/}${ARQUIVO_UM}</arg>
-<arg>${datadir}${/}${ARQUIVO_DOIS}</arg>
-<doc>Diff two text files</doc>
-<msg timestamp="20220602 08:52:25.757" level="INFO">file1: c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\DiffLibrary\meu_arquivo.txt</msg>
-<msg timestamp="20220602 08:52:25.757" level="INFO">file2: c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\DiffLibrary\meu_outro_arquivo.txt</msg>
-<msg timestamp="20220602 08:52:25.757" level="INFO">C:\Users\win\AppData\Local\Programs\Python\Python39\lib\site-packages\DiffLibrary\bin\diff\diff.exe --strip-trailing-cr  "c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\DiffLibrary\meu_arquivo.txt" "c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\DiffLibrary\meu_outro_arquivo.txt"</msg>
-<status status="PASS" starttime="20220602 08:52:25.756" endtime="20220602 08:52:25.775"/>
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220606 08:32:19.276" rpa="false" schemaversion="3">
+<suite id="s1" name="Cpf" source="c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\MyCustomLibraries\cpf.robot">
+<test id="s1-t1" name="Teste de validar cpf" line="5">
+<kw name="Validar se este número &quot;84726810090&quot; é um cpf" sourcename="Validar se este número &quot;${CPF}&quot; é um cpf">
+<kw name="Cpf Validate" library="validiaEGeraCPF">
+<var>${VALOR_CPF}</var>
+<arg>${CPF}</arg>
+<msg timestamp="20220606 08:32:19.296" level="INFO">${VALOR_CPF} = True</msg>
+<status status="PASS" starttime="20220606 08:32:19.296" endtime="20220606 08:32:19.296"/>
 </kw>
-<status status="PASS" starttime="20220602 08:52:25.756" endtime="20220602 08:52:25.775"/>
+<kw name="Log" library="BuiltIn">
+<arg>${VALOR_CPF}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 08:32:19.297" level="INFO">True</msg>
+<status status="PASS" starttime="20220606 08:32:19.296" endtime="20220606 08:32:19.297"/>
 </kw>
-<status status="PASS" starttime="20220602 08:52:25.755" endtime="20220602 08:52:25.775"/>
+<status status="PASS" starttime="20220606 08:32:19.296" endtime="20220606 08:32:19.297"/>
+</kw>
+<kw name="Validar se este número &quot;84755810090&quot; é um cpf" sourcename="Validar se este número &quot;${CPF}&quot; é um cpf">
+<kw name="Cpf Validate" library="validiaEGeraCPF">
+<var>${VALOR_CPF}</var>
+<arg>${CPF}</arg>
+<msg timestamp="20220606 08:32:19.297" level="INFO">${VALOR_CPF} = False</msg>
+<status status="PASS" starttime="20220606 08:32:19.297" endtime="20220606 08:32:19.297"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${VALOR_CPF}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 08:32:19.298" level="INFO">False</msg>
+<status status="PASS" starttime="20220606 08:32:19.297" endtime="20220606 08:32:19.298"/>
+</kw>
+<status status="PASS" starttime="20220606 08:32:19.297" endtime="20220606 08:32:19.298"/>
+</kw>
+<kw name="Validar se este número &quot;000000&quot; é um cpf" sourcename="Validar se este número &quot;${CPF}&quot; é um cpf">
+<kw name="Cpf Validate" library="validiaEGeraCPF">
+<var>${VALOR_CPF}</var>
+<arg>${CPF}</arg>
+<msg timestamp="20220606 08:32:19.298" level="INFO">${VALOR_CPF} = False</msg>
+<status status="PASS" starttime="20220606 08:32:19.298" endtime="20220606 08:32:19.298"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${VALOR_CPF}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 08:32:19.298" level="INFO">False</msg>
+<status status="PASS" starttime="20220606 08:32:19.298" endtime="20220606 08:32:19.298"/>
+</kw>
+<status status="PASS" starttime="20220606 08:32:19.298" endtime="20220606 08:32:19.299"/>
+</kw>
+<status status="PASS" starttime="20220606 08:32:19.295" endtime="20220606 08:32:19.299"/>
 </test>
-<status status="PASS" starttime="20220602 08:52:25.732" endtime="20220602 08:52:25.776"/>
+<status status="PASS" starttime="20220606 08:32:19.278" endtime="20220606 08:32:19.300"/>
 </suite>
 <statistics>
 <total>
@@ -25,7 +58,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="diffLibrary">diffLibrary</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Cpf">Cpf</stat>
 </suite>
 </statistics>
 <errors>
