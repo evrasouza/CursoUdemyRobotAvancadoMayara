@@ -1,64 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220606 08:32:19.276" rpa="false" schemaversion="3">
-<suite id="s1" name="Cpf" source="c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\Libraries\MyCustomLibraries\cpf.robot">
-<test id="s1-t1" name="Teste de validar cpf" line="5">
-<kw name="Validar se este número &quot;84726810090&quot; é um cpf" sourcename="Validar se este número &quot;${CPF}&quot; é um cpf">
-<kw name="Cpf Validate" library="validiaEGeraCPF">
-<var>${VALOR_CPF}</var>
-<arg>${CPF}</arg>
-<msg timestamp="20220606 08:32:19.296" level="INFO">${VALOR_CPF} = True</msg>
-<status status="PASS" starttime="20220606 08:32:19.296" endtime="20220606 08:32:19.296"/>
+<robot generator="Robot 5.0 (Python 3.9.5 on win32)" generated="20220606 18:37:00.961" rpa="false" schemaversion="3">
+<suite id="s1" name="TestSitePractice" source="c:\projects\ROBOT\CursoUdemyRobotAvancadoMayara\WebAvancado\SuiteSiteTestePracticePO_antes_de_refatorar\tests\TestSitePractice.robot">
+<test id="s1-t1" name="Caso de Teste com PO 02: Adicionar Cliente" line="18">
+<kw name="Abrir navegador" library="Resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220606 18:37:01.128" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220606 18:37:01.128" endtime="20220606 18:37:02.319"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${VALOR_CPF}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220606 08:32:19.297" level="INFO">True</msg>
-<status status="PASS" starttime="20220606 08:32:19.296" endtime="20220606 08:32:19.297"/>
+<status status="PASS" starttime="20220606 18:37:01.128" endtime="20220606 18:37:02.319"/>
 </kw>
-<status status="PASS" starttime="20220606 08:32:19.296" endtime="20220606 08:32:19.297"/>
+<kw name="Acessar a página home do site" library="Home">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${HOME_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220606 18:37:02.320" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20220606 18:37:02.320" endtime="20220606 18:37:17.613"/>
 </kw>
-<kw name="Validar se este número &quot;84755810090&quot; é um cpf" sourcename="Validar se este número &quot;${CPF}&quot; é um cpf">
-<kw name="Cpf Validate" library="validiaEGeraCPF">
-<var>${VALOR_CPF}</var>
-<arg>${CPF}</arg>
-<msg timestamp="20220606 08:32:19.297" level="INFO">${VALOR_CPF} = False</msg>
-<status status="PASS" starttime="20220606 08:32:19.297" endtime="20220606 08:32:19.297"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_TOPMENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220606 18:37:17.613" endtime="20220606 18:37:17.628"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${VALOR_CPF}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220606 08:32:19.298" level="INFO">False</msg>
-<status status="PASS" starttime="20220606 08:32:19.297" endtime="20220606 08:32:19.298"/>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220606 18:37:17.631" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20220606 18:37:17.629" endtime="20220606 18:37:17.631"/>
 </kw>
-<status status="PASS" starttime="20220606 08:32:19.297" endtime="20220606 08:32:19.298"/>
+<status status="PASS" starttime="20220606 18:37:02.319" endtime="20220606 18:37:17.631"/>
 </kw>
-<kw name="Validar se este número &quot;000000&quot; é um cpf" sourcename="Validar se este número &quot;${CPF}&quot; é um cpf">
-<kw name="Cpf Validate" library="validiaEGeraCPF">
-<var>${VALOR_CPF}</var>
-<arg>${CPF}</arg>
-<msg timestamp="20220606 08:32:19.298" level="INFO">${VALOR_CPF} = False</msg>
-<status status="PASS" starttime="20220606 08:32:19.298" endtime="20220606 08:32:19.298"/>
+<kw name="Clicar em &quot;Sign in&quot;" library="Home">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_BTN_SIGNIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:17.632" level="INFO">Clicking element 'xpath=//*[@id="header"]//*[@class="login"][contains(text(),"Sign in")]'.</msg>
+<status status="PASS" starttime="20220606 18:37:17.632" endtime="20220606 18:37:28.302"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${VALOR_CPF}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220606 08:32:19.298" level="INFO">False</msg>
-<status status="PASS" starttime="20220606 08:32:19.298" endtime="20220606 08:32:19.298"/>
+<status status="PASS" starttime="20220606 18:37:17.632" endtime="20220606 18:37:28.302"/>
 </kw>
-<status status="PASS" starttime="20220606 08:32:19.298" endtime="20220606 08:32:19.299"/>
+<kw name="Informar um e-mail válido" library="Autentication">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_EMAIL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220606 18:37:28.303" endtime="20220606 18:37:28.320"/>
 </kw>
-<status status="PASS" starttime="20220606 08:32:19.295" endtime="20220606 08:32:19.299"/>
+<kw name="Generate Random String" library="String">
+<var>${EMAIL}</var>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220606 18:37:28.320" level="INFO">${EMAIL} = ksaNFoT7</msg>
+<status status="PASS" starttime="20220606 18:37:28.320" endtime="20220606 18:37:28.320"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_EMAIL}</arg>
+<arg>${EMAIL}@testerobot.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:28.321" level="INFO">Typing text 'ksaNFoT7@testerobot.com' into text field 'id=email_create'.</msg>
+<status status="PASS" starttime="20220606 18:37:28.320" endtime="20220606 18:37:28.383"/>
+</kw>
+<status status="PASS" starttime="20220606 18:37:28.303" endtime="20220606 18:37:28.383"/>
+</kw>
+<kw name="Clicar em &quot;Create an account&quot;" library="Autentication">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${AUTH_BTN_SUBMITCREATEEMAIL}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220606 18:37:28.383" endtime="20220606 18:37:28.397"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${AUTH_BTN_SUBMITCREATEEMAIL}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:28.397" level="INFO">Clicking button 'id=SubmitCreate'.</msg>
+<status status="PASS" starttime="20220606 18:37:28.397" endtime="20220606 18:37:28.440"/>
+</kw>
+<status status="PASS" starttime="20220606 18:37:28.383" endtime="20220606 18:37:28.440"/>
+</kw>
+<kw name="Preencher os dados obrigatórios" library="Autentication">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${AUTH_TITLE_PERSONALINFO}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220606 18:37:28.440" endtime="20220606 18:37:34.559"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_GENDER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:34.559" level="INFO">Clicking element 'id=id_gender2'.</msg>
+<status status="PASS" starttime="20220606 18:37:34.559" endtime="20220606 18:37:34.588"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_FIRSTNAME}</arg>
+<arg>Everton</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:34.589" level="INFO">Typing text 'Everton' into text field 'id=customer_firstname'.</msg>
+<status status="PASS" starttime="20220606 18:37:34.588" endtime="20220606 18:37:34.648"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_LASTNAME}</arg>
+<arg>Souza</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:34.648" level="INFO">Typing text 'Souza' into text field 'id=customer_lastname'.</msg>
+<status status="PASS" starttime="20220606 18:37:34.648" endtime="20220606 18:37:34.706"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_PASSWORD}</arg>
+<arg>123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:34.707" level="INFO">Typing text '123456' into text field 'id=passwd'.</msg>
+<status status="PASS" starttime="20220606 18:37:34.706" endtime="20220606 18:37:34.756"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_ADDRESS}</arg>
+<arg>Rua Framework, Bairro Robot</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:34.756" level="INFO">Typing text 'Rua Framework, Bairro Robot' into text field 'id=address1'.</msg>
+<status status="PASS" starttime="20220606 18:37:34.756" endtime="20220606 18:37:34.815"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_CITY}</arg>
+<arg>Floripa</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220606 18:37:34.816" level="INFO">Typing text 'Floripa' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20220606 18:37:34.815" endtime="20220606 18:37:34.871"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_STATE}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220606 18:37:34.872" endtime="20220606 18:37:34.880"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${BROWSER}'=='firefox'</arg>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${AUTH_FIELD_STATE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220606 18:37:34.880" endtime="20220606 18:37:34.880"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_STATE}</arg>
+<arg>4</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20220606 18:37:34.881" level="INFO">Selecting options from selection list 'id=id_state' by index 4.</msg>
+<msg timestamp="20220606 18:37:35.073" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220606 18:37:35.073" level="FAIL">NoSuchElementException: Message: Could not locate element with index 4
+</msg>
+<status status="FAIL" starttime="20220606 18:37:34.880" endtime="20220606 18:37:35.074"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_POSTCODE}</arg>
+<arg>12345</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220606 18:37:35.074" endtime="20220606 18:37:35.074"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${AUTH_FIELD_PHONEMOBILE}</arg>
+<arg>99988877</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220606 18:37:35.075" endtime="20220606 18:37:35.075"/>
+</kw>
+<status status="FAIL" starttime="20220606 18:37:28.440" endtime="20220606 18:37:35.075"/>
+</kw>
+<kw name="Submeter cadastro" library="Autentication">
+<status status="NOT RUN" starttime="20220606 18:37:35.075" endtime="20220606 18:37:35.075"/>
+</kw>
+<status status="FAIL" starttime="20220606 18:37:01.127" endtime="20220606 18:37:35.076">NoSuchElementException: Message: Could not locate element with index 4
+</status>
 </test>
-<status status="PASS" starttime="20220606 08:32:19.278" endtime="20220606 08:32:19.300"/>
+<status status="FAIL" starttime="20220606 18:37:00.962" endtime="20220606 18:37:35.078"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Cpf">Cpf</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TestSitePractice">TestSitePractice</stat>
 </suite>
 </statistics>
 <errors>
